@@ -5,7 +5,7 @@ import { Observable, map } from "rxjs";
 
 @Injectable()
 export class CategoryService {
-    private url = "https://deneme-1b63e-default-rtdb.firebaseio.com/"
+    private url = "https://"
     
     constructor(private http: HttpClient){}
 

@@ -9,8 +9,8 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  URLsignUp = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAETwXg_VHYGeWs6ndivzIzUaAANZCb6ng"
-  URLsignIn = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAETwXg_VHYGeWs6ndivzIzUaAANZCb6ng"
+  URLsignUp = "https://"
+  URLsignIn = "https://"
   user = new BehaviorSubject<User | null>(null)
   constructor(private http: HttpClient) { }
 

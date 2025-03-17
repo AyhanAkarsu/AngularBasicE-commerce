@@ -9,7 +9,7 @@ import { AuthService } from "./auth.service";
 // local service
 @Injectable()
 export class ProductService {
-    private url = "https://deneme-1b63e-default-rtdb.firebaseio.com/"
+    private url = "https://"
 
     constructor(private http: HttpClient, private authService: AuthService) { }
 

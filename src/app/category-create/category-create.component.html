@@ -1,0 +1,21 @@
+<h3>Create Category</h3>
+<form #form = "ngForm" (ngSubmit)="saveProject(form)">
+    <div class="alert alert-{{color}}" *ngIf="error">
+        {{error}}
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input required minlength="1" [(ngModel)]="model.id" type="number" class="form-control" name="id" #id = "ngModel">
+        <div class="text-danger" *ngIf="id.invalid && id.touched">
+            Gerçerli bir ID bilgisi giriniz.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Category</label>
+        <input required minlength="3" [(ngModel)]="model.name" type="text" class="form-control" name="category" #name = "ngModel">
+        <div class="text-danger" *ngIf="id.invalid && id.touched">
+            Gerçerli bir kategori bilgisi giriniz.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save Product</button>
+</form>

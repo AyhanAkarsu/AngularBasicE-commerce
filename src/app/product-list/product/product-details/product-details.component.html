@@ -1,0 +1,13 @@
+<div class="card border border-warning m-2">
+    <div class="row p-1">
+        <div class="col-4">
+            <img src="../../assets/images/{{product?.imageURL}}" alt="" class="img-fluid rounded-start">
+        </div>
+        <div class="card-body col-2">
+            <h5 class="card-title">{{product?.name ?? 'Bilgi bulunamadı...'}}</h5>
+            <p class="card-text" [innerHtml]="product?.description"></p>
+            <p class="card-text"><span class="bold-text">Fiyat:</span> {{product?.price}}₺</p>
+        </div> 
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="spinner-border text-success mt-4" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+</div>
+
+<div *ngIf="products.length>0 && !loading; else noProducts">
+    <div *ngFor="let product of products">
+        <div *ngIf="product.isActive">
+             <div class="card mb-3 my-2">
+                <div class="row p-1">
+                    <div class="col-3">
+                        <img src="../../assets/images/{{product.imageURL}}" alt="" class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-9">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text"><span class="bold-text">Fiyat:</span> {{product?.price}}₺</p>
+                            <a routerLink= "/products/{{product.id}}" class="btn btn-primary">Ürün detay</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noProducts>
+    <div class="alert alert-warning mt-2" *ngIf="!loading">
+        no products
+    </div>
+</ng-template>

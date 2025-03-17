@@ -1,0 +1,50 @@
+<h3>Create Product</h3>
+<form #form = "ngForm" (ngSubmit)="saveProject(form)">
+    <div class="alert alert-{{color}}" *ngIf="error">
+        {{error}}
+    </div>
+    <div class="mb-3">
+        <label for="id" class="form-label">ID</label>
+        <input required minlength="1" [(ngModel)]="model.id" type="number" name="id" id="id" class="form-control" #id = "ngModel">
+        <div class="text-danger" *ngIf="id.invalid && id.touched">
+            Gerçerli bir ID bilgisi giriniz.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input required minlength="1" [(ngModel)]="model.name" type="text" name="name" id="name" class="form-control" #name = "ngModel">
+        <div class="text-danger" *ngIf="name.invalid && name.touched">
+            Gerçerli bir name bilgisi giriniz.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input required minlength="1" [(ngModel)]="model.price" type="number" min="1" name="price" id="price" class="form-control" #price = "ngModel">
+        <div class="text-danger" *ngIf="price.invalid && price.touched">
+            Gerçerli bir price bilgisi giriniz.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="imageURL" class="form-label">ImageURL</label>
+        <input required minlength="1" [(ngModel)]="model.imageURL" type="text" name="imageURL" id="imageURL" class="form-control" #imageURL = "ngModel">
+        <div class="text-danger" *ngIf="imageURL.invalid && imageURL.touched">
+            Gerçerli bir imageURL bilgisi giriniz.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <ckeditor [editor]="Editor" [(ngModel)]="model.description" name="description" id="description"></ckeditor> 
+    </div>
+    <div class="form-check mb-3">
+        <input [(ngModel)]="model.isActive" type="checkbox" name="isActive" id="isActive" class="form-check-input">
+        <label for="flexCheckDefault" class="form-check-label">IsActive</label>
+    </div>
+    <div class="mb-3">
+        <label for="categoryId" class="form-label">Category</label>
+        <select [(ngModel)]="model.category" name="categoryId" id="categoryId" class="form-select">
+            <option value="0">Kategori</option>
+            <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save Product</button>
+</form>

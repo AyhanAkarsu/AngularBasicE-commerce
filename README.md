@@ -1,27 +1,35 @@
-# AngularApp
+# Angular Basic E-commerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+An Angular 16 e-commerce practice project with product management and a Bootstrap-based interface. It is a learning project rather than a production storefront.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js 18 or newer
+- npm
 
-## Code scaffolding
+## Run locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install
+npm start
+```
 
-## Build
+Open `http://localhost:4200/` in a browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Useful commands
 
-## Running unit tests
+```bash
+npm run build
+npm test -- --watch=false
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tech stack
 
-## Running end-to-end tests
+- Angular 16
+- TypeScript
+- Bootstrap
+- RxJS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Status
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Portfolio and learning project. APIs and authentication are not intended for production use.
